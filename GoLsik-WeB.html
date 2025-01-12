@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Чипсяки</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #242630, #3a3f54);
+      position: relative;
+      color: #c39fcc;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.5) 100%);
+    }
+
+    .window {
+      text-align: center;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 65px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 50px rgba(173, 216, 230, 0.6);
+      font-size: 2em;
+    }
+
+    .window h1 {
+      margin: 0;
+      font-size: 3em;
+      animation: fadeIn 3s ease-out;
+    }
+
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #708090;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      animation: floatHeart 5s infinite;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="window">
+    <h1>Доброго времени суток</h1>
+    <p>КУПИ СЕБЕ ЧИПСЯКИ</p>
+    <p>мяу</p>
+  </div>
+
+  <div class="hearts">
+    <!-- Сердца, которые будут летать -->
+    <div class="heart" style="left: 10%; animation-duration: 4s;"></div>
+    <div class="heart" style="left: 30%; animation-duration: 5s;"></div>
+    <div class="heart" style="left: 50%; animation-duration: 6s;"></div>
+    <div class="heart" style="left: 70%; animation-duration: 7s;"></div>
+    <div class="heart" style="left: 90%; animation-duration: 5s;"></div>
+  </div>
+
+</body>
+</html>
